@@ -1,5 +1,5 @@
 # flutter_tags
-[![pub package](https://img.shields.io/badge/pub-0.4.9+1-orange.svg)](https://pub.dartlang.org/packages/flutter_tags)
+[![pub package](https://img.shields.io/badge/pub-1.0.0--nullsafety.1-orange.svg)](https://pub.dev/packages/flutter_tags/versions/1.0.0-nullsafety.1)
 [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://github.com/Solido/awesome-flutter#ui)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dnag88)
 
@@ -7,9 +7,10 @@ Create beautiful tags quickly and easily.
 
 ## Installing
 Add this to your package's pubspec.yaml file:
+Null-safety version (Beta) [MORE INFO](https://dart.dev/null-safety)
 ```dart
 dependencies:
-  flutter_tags: "^0.4.9+1"
+  flutter_tags: "^1.0.0-nullsafety.1"
 ```
 
 
@@ -58,9 +59,13 @@ Widget build(BuildContext context) {
         //width: double.infinity, padding: EdgeInsets.symmetric(horizontal: 10),
         onSubmitted: (String str) {
           // Add item to the data source.
-          setState(() {
-              // required
-            _items.add(str);
+          setState(() {             
+             // required             
+            _items.add(Item(
+                title: str,
+                active: true,
+                index: 1,                
+              ));
           });
         },
       ),
